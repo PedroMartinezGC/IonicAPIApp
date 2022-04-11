@@ -1,0 +1,19 @@
+{
+    "data":[
+        {
+            "name": "Desmond",
+            "state": "From Ankhara",
+            "description": "Living here"
+        },
+        {
+            "name": "Rashira",
+            "state": "From Istambul",
+            "description": "Living there"
+        },
+        {
+            "name": "Kyla",
+            "state": "From Lithuania",
+            "description": "Living outside"
+        }
+    ]
+}

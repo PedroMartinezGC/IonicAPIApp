@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color = "mycolor">
+    <ion-title>Item List</ion-title>
+  </ion-toolbar>
+
+<!--SEARCHBAR-->
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search" animated (ionInput)="searchItem($event)" (ionClear)="resetChanges()" showClearButton="focus"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<!--ITEM LIST-->
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor = "let item of searchedItem; let i = index">
+      <ion-label (click) = "openModal(item.title, item.visits, item.value, item.item_id)" style = "cursor: pointer;">{{item.title}}</ion-label>
+      <ion-label><p>Visits:  {{item.visits}}</p></ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!--Button for returning to the login page-->
+  <button ion-button [routerLink]="['/login']" class = "button">Go Back</button>    
+
+</ion-content>

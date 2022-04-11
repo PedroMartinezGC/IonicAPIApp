@@ -1,0 +1,16 @@
+<ion-header style = "margin-bottom: 50px;">
+  <ion-toolbar>
+    <ion-title style = "color: #326a3f">{{title}}</ion-title>
+
+    <ion-buttons slot = "end">
+      <ion-icon class = "cross" name = "close-outline" (click) = closeModal()></ion-icon>
+    </ion-buttons>
+
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <ion-label class = "values">Value: {{value}}</ion-label>
+  <ion-label class = "values">Visits: {{visits}}</ion-label>
+</ion-content>

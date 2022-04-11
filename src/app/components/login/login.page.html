@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color = "mycolor">
+    <ion-title>Login to the app</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--LOGIN INPUTS AND SUBMIT BUTTON, (only appears wen logged == false)-->
+<ion-content>
+  <ion-card *ngIf = "logged == 'false'">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <ion-item>
+        <ion-label position = "floating">User</ion-label>
+        <ion-input formControlName = "user"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position = "floating">Password</ion-label>
+        <ion-input formControlName = "pass" type = "password"></ion-input>
+      </ion-item>
+      
+    </form>
+  </ion-card>
+  
+  <button *ngIf = "logged == 'false'" ion-button (click) = "onLogin(loginForm.value)" class = "button">Submit</button>
+
+  <!--LOGED MESSAGE AND LOGOUT BUTTON, (only appears wen logged == true)-->
+  <div *ngIf = "logged == 'true'">
+    <br>
+    <span style="margin-left: 15px;">You're already logged &nbsp;&nbsp;&nbsp;</span>
+    <ion-icon  name="person-circle"></ion-icon>
+      <div style="margin-left: 15px;">
+        <button ion-button (click) = "logout()" class = "button">Logout</button>
+        <button ion-button [routerLink]="['/itemlist']" class = "button">Go to Item list</button>
+      </div>
+    
+  </div>
+  
+  
+  
+
+</ion-content>
